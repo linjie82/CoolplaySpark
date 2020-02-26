@@ -1,42 +1,51 @@
 ## Spark Streaming 源码解析系列
 
-[「腾讯·广点通」](http://e.qq.com)技术团队荣誉出品
+[「腾讯广告」](http://e.qq.com)技术团队（原腾讯广点通技术团队）荣誉出品
 
 ```
 本系列内容适用范围：
 
-* 2016.01.04 update, Spark 1.6 全系列 √ (1.6.0)
-* 2015.11.09 update, Spark 1.5 全系列 √ (1.5.0, 1.5.1, 1.5.2)
-* 2015.07.15 update, Spark 1.4 全系列 √ (1.4.0, 1.4.1)
-* 2015.04.17 update, Spark 1.3 全系列 √ (1.3.0, 1.3.1)
+* 2018.11.02 update, Spark 2.4 全系列 √ (已发布：2.4.0)
+* 2018.02.28 update, Spark 2.3 全系列 √ (已发布：2.3.0 ~ 2.3.2)
+* 2017.07.11 update, Spark 2.2 全系列 √ (已发布：2.2.0 ~ 2.2.3)
 ```
 
 - *概述*
-	- [0.1 Spark Streaming 实现思路与模块概述](0.1 Spark Streaming 实现思路与模块概述.md)
+  - [0.1 Spark Streaming 实现思路与模块概述](0.1%20Spark%20Streaming%20实现思路与模块概述.md)
 - *模块 1：DAG 静态定义*
-	- [1.1 DStream, DStreamGraph 详解](1.1 DStream, DStreamGraph 详解.md)
-	- [1.2 DStream 生成 RDD 实例详解](1.2 DStream 生成 RDD 实例详解.md)
+  - [1.1 DStream, DStreamGraph 详解](1.1%20DStream%2C%20DStreamGraph%20详解.md)
+  - [1.2 DStream 生成 RDD 实例详解](1.2%20DStream%20生成%20RDD%20实例详解.md)
 - *模块 2：Job 动态生成*
-	- [2.1 JobScheduler, Job, JobSet 详解](2.1 JobScheduler, Job, JobSet 详解.md)
-	- [2.2 JobGenerator 详解](2.2 JobGenerator 详解.md)
+  - [2.1 JobScheduler, Job, JobSet 详解](2.1%20JobScheduler%2C%20Job%2C%20JobSet%20详解.md)
+  - [2.2 JobGenerator 详解](2.2%20JobGenerator%20详解.md)
 - *模块 3：数据产生与导入*
-	- [3.1 Receiver 分发详解](3.1 Receiver 分发详解.md) 
-	- [3.2 Receiver, ReceiverSupervisor, BlockGenerator, ReceivedBlockHandler 详解](3.2 Receiver, ReceiverSupervisor, BlockGenerator, ReceivedBlockHandler 详解.md)
-	- [3.3 ReceiverTraker, ReceivedBlockTracker 详解](3.3 ReceiverTraker, ReceivedBlockTracker 详解.md)
+  - [3.1 Receiver 分发详解](3.1%20Receiver%20分发详解.md) 
+  - [3.2 Receiver, ReceiverSupervisor, BlockGenerator, ReceivedBlockHandler 详解](3.2%20Receiver%2C%20ReceiverSupervisor%2C%20BlockGenerator%2C%20ReceivedBlockHandler%20详解.md)
+  - [3.3 ReceiverTraker, ReceivedBlockTracker 详解](3.3%20ReceiverTraker%2C%20ReceivedBlockTracker%20详解.md)
 - *模块 4：长时容错*
-	- [4.1 Executor 端长时容错详解](4.1 Executor 端长时容错详解.md)
-	- [4.2 Driver 端长时容错详解](4.2 Driver 端长时容错详解.md)
+  - [4.1 Executor 端长时容错详解](4.1%20Executor%20端长时容错详解.md)
+  - [4.2 Driver 端长时容错详解](4.2%20Driver%20端长时容错详解.md)
 - *StreamingContext*
-	- 5.1 StreamingContext 详解
+  - 5.1 StreamingContext 详解
+- *一些资源和 Q&A*
+  - [Spark 资源集合](https://github.com/lw-lin/CoolplaySpark/tree/master/Spark%20%E8%B5%84%E6%BA%90%E9%9B%86%E5%90%88) (包括 Spark Summit 视频，Spark 中文微信群等资源集合)<br/>![wechat_spark_streaming_small](../Spark%20%E8%B5%84%E6%BA%90%E9%9B%86%E5%90%88/resources/wechat_spark_streaming_small_.PNG)
+  - [(Q&A) 什么是 end-to-end exactly-once?](Q%26A%20什么是%20end-to-end%20exactly-once.md)
 
 ## 致谢
 
+- Github @wongxingjun 同学指出 3 处 typo，并提 Pull Request 修正（PR 已合并）
+- Github @endymecy 同学指出 2 处 typo，并提 Pull Request 修正（PR 已合并）
+- Github @Lemonjing 同学指出几处 typo，并提 Pull Request 修正（PR 已合并）
+- Github @xiaoguoqiang 同学指出 1 处 typo，并提 Pull Request 修正（PR 已合并）
+- Github 张瀚 (@AntikaSmith) 同学指出 1 处 问题（已修正）
+- Github Tao Meng (@mtunique) 同学指出 1 处 typo，并提 Pull Request 修正（PR 已合并）
 - Github @ouyangshourui 同学指出 1 处问题，并提 Pull Request 修正（PR 已合并）
 - Github @jacksu 同学指出 1 处问题，并提 Pull Request 修正（PR 已合并）
-- Github @397090770 同学指出 1 处配图笔误
-- Github @ubtaojiang1982 同学指出 1 处 typo
-- Github @marlin5555 同学指出 1 处配图遗漏信息
-- Weibo @wyggggo 同学指出 1 处 typo
+- Github @klion26 同学指出 1 处 typo（已修正）
+- Github @397090770 同学指出 1 处配图笔误（已修正）
+- Github @ubtaojiang1982 同学指出 1 处 typo（已修正）
+- Github @marlin5555 同学指出 1 处配图遗漏信息（已修正）
+- Weibo @wyggggo 同学指出 1 处 typo（已修正）
 
 ## Spark Streaming 史前史(1)
 
@@ -59,3 +68,9 @@
 ![iamge](0.imgs/006.png)
 
 本系列文章，就来详解发布于 2013 年的 Spark Streaming。
+
+## 知识共享
+
+![](https://licensebuttons.net/l/by-nc/4.0/88x31.png)
+
+除非另有注明，本《Spark Streaming 源码解析系列》系列文章使用 [CC BY-NC（署名-非商业性使用）](https://creativecommons.org/licenses/by-nc/4.0/) 知识共享许可协议。
